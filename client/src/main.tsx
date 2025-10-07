@@ -1,10 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import "./index.css";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CalculatorPage from "./pages/CalculatorPage/index.tsx";
+import React from "react";
+import LandingPage from "./pages/LandingPage/index.tsx";
+import { PATH } from "./utils/pageRoutes.ts";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const router = createBrowserRouter([
+  {
+    path: PATH.LANDING,
+    element: <LandingPage />,
+  },
+  {
+    path: PATH.CALCULATOR,
+    element: <CalculatorPage />,
+  },
+]);
+
+createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
