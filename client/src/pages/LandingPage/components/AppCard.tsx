@@ -1,12 +1,7 @@
-import type { LucideIcon } from "lucide-react";
+import type { IAppItem } from "../../../models/interface";
 
-interface AppCardProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  status: string;
+interface AppCardProps extends Omit<IAppItem, "id" | "path"> {
   onClick: () => void;
-  available: boolean;
 }
 
 export function AppCard({

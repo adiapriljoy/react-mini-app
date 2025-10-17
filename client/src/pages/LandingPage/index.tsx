@@ -8,11 +8,12 @@ import {
 import { AppCard } from "./components/AppCard";
 import { useNavigate } from "react-router-dom";
 import { PATH } from "../../utils/pageRoutes";
+import type { IAppItem } from "../../models/interface";
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
-  const apps = [
+  const apps: IAppItem[] = [
     {
       id: "calculator",
       icon: CalculatorIcon,
@@ -27,9 +28,9 @@ const LandingPage = () => {
       icon: ListTodoIcon,
       title: "Todo List",
       description: "Manage your tasks with create, read, update, delete",
-      status: "Coming Soon",
-      available: false,
-      path: "",
+      status: "Available",
+      available: true,
+      path: PATH.TODO,
     },
     {
       id: "weather",

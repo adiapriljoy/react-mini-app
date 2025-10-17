@@ -8,6 +8,7 @@ import { PATH } from "./utils/pageRoutes.ts";
 import MainLayout from "./layout/MainLayout.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
+import TodoPage from "./pages/TodoPage/index.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: PATH.CALCULATOR,
         element: <CalculatorPage />,
+      },
+      {
+        path: PATH.TODO,
+        element: <TodoPage />,
       },
     ],
   },
