@@ -1,7 +1,3 @@
-import {
-  useAddCalculation,
-  useDeleteAllCalculations,
-} from "../../hooks/mutation/useCalculationMutation";
 import { useGetCalculations } from "../../hooks/query/useCalculationQuery";
 import { useCalculator } from "../../hooks/useCalculator";
 import { CalculatorButton } from "./components/CalculatorButton";
@@ -11,34 +7,17 @@ import { CalculationHistory } from "./components/CalculatorHistory";
 export default function CalculatorPage() {
   const {
     display,
-    expression,
     handleNumber,
     handleDecimal,
     handleOperator,
-    handleEquals,
     handleClear,
     handlePercent,
     handleToggleSign,
+    onEquals,
+    handleDeleteCalculation,
   } = useCalculator();
 
   const { data: history } = useGetCalculations();
-  const addCalculation = useAddCalculation();
-  const deleteCalculation = useDeleteAllCalculations();
-
-  const onEquals = () => {
-    const result = handleEquals();
-    if (result !== null && result !== undefined) {
-      addCalculation.mutate({
-        expression,
-        result: String(result),
-      });
-    }
-  };
-
-  const handleDeleteCalculation = () => {
-    handleClear();
-    deleteCalculation.mutate();
-  };
 
   return (
     <div className="flex flex-col items-center justify-center">
