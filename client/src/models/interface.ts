@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { TAppStatus, TTodoStatus } from "./type";
 
 export interface ICalculation {
   _id?: string;
@@ -13,7 +14,17 @@ export interface IAppItem {
   icon: LucideIcon;
   title: string;
   description: string;
-  status: "Available" | "Coming Soon";
+  status: TAppStatus;
   available: boolean;
   path: string;
+}
+
+export interface ITodo {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  status: TTodoStatus;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

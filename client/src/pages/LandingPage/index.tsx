@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { PATH } from "../../utils/pageRoutes";
 import type { IAppItem } from "../../models/interface";
 
-const LandingPage = () => {
+export default function LandingPage() {
   const navigate = useNavigate();
 
   const apps: IAppItem[] = [
@@ -90,6 +90,4 @@ const LandingPage = () => {
       </div>
     </div>
   );
-};
-
-export default LandingPage;
+}
