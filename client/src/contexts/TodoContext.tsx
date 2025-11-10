@@ -32,6 +32,15 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
       createdAt: new Date(),
       updatedAt: new Date(),
     },
+    {
+      id: "3",
+      title: "Exercise",
+      description: "Arms, Chest, Back",
+      category: "Physical",
+      status: "Done",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
   ]);
 
   return (

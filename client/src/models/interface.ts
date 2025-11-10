@@ -28,3 +28,8 @@ export interface ITodo {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
+export interface ITodoStatusColor {
+  board: string;
+  card: string;
+}
